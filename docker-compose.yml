@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-CU10-ubuntu-20.04
+    container_name: webapi_mssql
+    ports:
+        - "8087:1433"
+    networks:
+        - testnet
+    environment:
+        - ACCEPT_EULA=Y
+        - SA_PASSWORD=HS3Kd6Z#5WzZ7@hBqBr4
+        - MSSQL_PID=Express
+
+networks: 
+    testnet:
+        name: testnet
+
